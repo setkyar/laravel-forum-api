@@ -10,6 +10,10 @@ Route::group(['middleware' => ['api']], function() {
 		'uses'	=> 'AuthController@signin'
 	]);
 
+	Route::get('/sections', [
+		'uses'	=> 'Forum\SectionController@index'
+	]);
+
 	Route::group(['middleware' => 'jwt.auth'], function() {
 		
 		Route::get('/user', [
